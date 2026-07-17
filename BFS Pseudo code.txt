@@ -1,0 +1,19 @@
+BFS PSEUDO CODE:
+
+BFS(G, S)
+
+Visited ← {}
+Queue ← Empty
+
+Visited ← Visited ∪ {S}
+Enqueue(S)
+While Queue is not empty do
+    V ← Dequeue()
+    Print V
+    For each Adjacent Vertex U of V do
+        If U is not visited then
+            Mark U as visited
+            Enqueue(U)
+        End If
+    End For
+End While

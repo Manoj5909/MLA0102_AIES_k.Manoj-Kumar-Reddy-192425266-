@@ -1,0 +1,32 @@
+UCS(G,Start,Goal)
+PriorityQueue ← {(0,Start)}
+Visited ← {}
+Parent ← {}
+While PriorityQueue is not empty do
+    (Cost,Node) ← Remove minimum cost node
+    If Node is visited then
+        Continue
+    End If
+    Mark Node as visited
+    If Node = Goal then
+        Path ← Empty
+        While Node ≠ Start do
+            Add Node to Path
+            Node ← Parent[Node]
+        End While
+        Add Start to Path
+        Reverse Path
+        Print Path
+        Print Cost
+        Stop
+    End If
+    For each Neighbor of Node do
+        If Neighbor is not visited then
+            Insert (Cost + EdgeCost,Neighbor) into PriorityQueue
+            If Neighbor has no Parent then
+                Parent[Neighbor] ← Node
+            End If
+        End If
+    End For
+End While
+Print "Goal not reachable"

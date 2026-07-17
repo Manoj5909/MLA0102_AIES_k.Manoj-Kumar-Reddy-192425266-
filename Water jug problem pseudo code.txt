@@ -1,0 +1,20 @@
+WaterJug(Capacities,TargetJug,TargetAmount)
+Queue←{Initial State}
+Visited←{}
+While Queue is not empty do
+    Remove first State
+    If State is visited then
+        Continue
+    End If
+    Mark State as visited
+    If TargetJug contains TargetAmount then
+        Print Solution Path
+        Print Goal Achieved
+        Stop
+    End If
+    Fill any jug
+    Empty any jug
+    Pour water from one jug to another
+    Add all unvisited states to Queue
+End While
+Print "No solution possible"

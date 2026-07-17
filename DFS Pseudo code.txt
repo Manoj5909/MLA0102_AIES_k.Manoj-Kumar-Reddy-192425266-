@@ -1,0 +1,14 @@
+DFS(G, S)
+
+Visited ← {}
+
+DFS_Visit(S)
+Procedure DFS_Visit(V)
+    Mark V as visited
+    Print V
+    For each Adjacent Vertex U of V do
+        If U is not visited then
+            DFS_Visit(U)
+        End If
+    End For
+End Procedure
